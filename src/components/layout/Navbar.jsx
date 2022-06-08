@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ title }) => {
+  // console.log(props);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
       <div className="container-fluid">
         <a className="navbar-brand" href="#!">
-          Navbar
+          {title}
         </a>
         <button
           className="navbar-toggler"
@@ -40,6 +42,14 @@ const Navbar = () => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+Navbar.defaultProps = {
+  title: 'My App',
 };
 
 export default Navbar;
